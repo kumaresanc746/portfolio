@@ -55,7 +55,13 @@ ul {
 }
 
 .section {
-    padding: 100px 0;
+    padding: 120px 0;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 0;
+    }
 }
 
 .section-title {
@@ -773,7 +779,7 @@ textarea:focus {
 /* Responsive Design */
 @media (max-width: 992px) {
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
 
     .about-grid,
@@ -782,30 +788,105 @@ textarea:focus {
         gap: 3rem;
     }
 
-    .skills-grid {
-        gap: 2rem;
+    .about-text {
+        text-align: center;
+    }
+
+    .about-cards {
+        align-items: center;
+    }
+
+    .about-card {
+        width: 100%;
+        max-width: 450px;
     }
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        /* Mobile menu can be added in JS */
+    .navbar {
+        padding: 1rem 0;
     }
 
     .menu-btn {
         display: block;
+        z-index: 1001;
+        font-size: 1.8rem;
+        color: var(--white);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .menu-btn.active {
+        color: var(--primary-color);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        border-left: 1px solid rgba(59, 130, 246, 0.1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
 
     .hero-content h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .hero-content h3 {
+        font-size: 1.5rem;
     }
 
     .section-title h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .cert-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container {
+        padding: 0 1.5rem;
     }
 }
