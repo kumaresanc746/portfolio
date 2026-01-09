@@ -60,7 +60,7 @@ function animateParticles() {
 
 // 3D Tilt Effect
 function initTilt() {
-    const cards = document.querySelectorAll('.project-card');
+    const cards = document.querySelectorAll('.project-card, .cert-card');
 
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {

@@ -645,6 +645,71 @@ textarea:focus {
     transform: translateY(0);
 }
 
+/* Certifications Section */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.cert-card {
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.cert-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: var(--transition);
+}
+
+.cert-card:hover .cert-icon {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: rotate(360deg);
+}
+
+.cert-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--white);
+}
+
+.cert-info p {
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.btn-small-text {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .hero-content h1 {
