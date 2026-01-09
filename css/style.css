@@ -649,13 +649,13 @@ textarea:focus {
 .cert-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    gap: 3rem;
     justify-content: center;
 }
 
 .cert-card {
     background-color: var(--bg-card);
-    padding: 2.5rem;
+    padding: 3rem 2rem;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
@@ -664,50 +664,110 @@ textarea:focus {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Staggered Reveal Animation */
+.cert-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.cert-card:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.cert-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent,
+            transparent,
+            transparent,
+            var(--primary-color));
+    animation: rotate-beam 4s linear infinite;
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 0;
+}
+
+@keyframes rotate-beam {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cert-card:hover::before {
+    opacity: 1;
+}
+
+.cert-card::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--bg-card);
+    border-radius: 18px;
+    z-index: 1;
+}
+
+.cert-card>* {
+    position: relative;
+    z-index: 2;
 }
 
 .cert-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-color);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.1);
+    transform: translateY(-10px) scale(1.02);
+    border-color: transparent;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .cert-icon {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     background: rgba(59, 130, 246, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     border: 1px solid rgba(59, 130, 246, 0.2);
     transition: var(--transition);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
 }
 
 .cert-card:hover .cert-icon {
     background: var(--primary-color);
     color: var(--white);
-    transform: rotate(360deg);
+    transform: rotateY(360deg) scale(1.1);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
 }
 
 .cert-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 0.8rem;
     color: var(--white);
+    letter-spacing: 1px;
 }
 
 .cert-info p {
     color: var(--text-dim);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
 }
 
 .btn-small-text {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.7rem 1.8rem;
+    font-size: 0.95rem;
+    border-radius: 8px;
 }
 
 /* Responsive Design */

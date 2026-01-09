@@ -107,7 +107,7 @@ function reveal() {
 
             if (element.classList.contains('skill-item')) {
                 const bar = element.querySelector('.skill-progress');
-                bar.style.opacity = "1";
+                if (bar) bar.style.opacity = "1";
             }
         }
     });
@@ -135,10 +135,32 @@ contactForm.addEventListener('submit', (e) => {
 
     showStatus('Sending message...', 'loading');
 
-    setTimeout(() => {
-        showStatus('Thank you! Your message has been sent.', 'success');
-        contactForm.reset();
-    }, 2000);
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch(contactForm.action, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            showStatus('Thank you! Your message has been sent.', 'success');
+            contactForm.reset();
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    showStatus(data["errors"].map(error => error["message"]).join(", "), 'error');
+                } else {
+                    showStatus("Oops! There was a problem submitting your form", 'error');
+                }
+            })
+        }
+    }).catch(error => {
+        showStatus("Oops! There was a problem submitting your form", 'error');
+    });
 });
 
 function isValidEmail(email) {
