@@ -196,7 +196,7 @@ ul {
     /* Prevent layout shift */
 }
 
-}
+
 
 .hero-content p {
     max-width: 600px;
@@ -479,7 +479,7 @@ ul {
 
 .btn-small {
     padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    font-size: 2em;
 }
 
 /* Experience Section */
