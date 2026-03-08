@@ -1,13 +1,13 @@
 /* CSS Variable Declarations */
 :root {
-    --primary-color: #3b82f6;
-    /* DevOps Blue */
-    --primary-hover: #2563eb;
-    --bg-dark: #0f172a;
-    --bg-card: #1e293b;
+    --primary-color: #f59e0b;
+    /* Professional Indigo */
+    --primary-hover: #d97706;
+    --bg-dark: #171717;
+    --bg-card: #262626;
     --text-main: #f8fafc;
-    --text-dim: #94a3b8;
-    --accent: #60a5fa;
+    --text-dim: #a3a3a3;
+    --accent: #fbbf24;
     --white: #ffffff;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -25,7 +25,7 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
+    background-color: transparent;
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
@@ -89,7 +89,7 @@ ul {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(23, 23, 23, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding: 1.5rem 0;
@@ -146,7 +146,7 @@ ul {
     justify-content: center;
     text-align: center;
     position: relative;
-    background: radial-gradient(circle at center, #111827 0%, #030712 100%);
+    background: transparent;
     overflow: hidden;
 }
 
@@ -165,7 +165,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 80%);
+    background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 80%);
     z-index: 2;
 }
 
@@ -187,11 +187,11 @@ ul {
     font-size: 5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #ffffff, var(--primary-color), #60a5fa);
+    background: linear-gradient(to right, #ffffff, var(--primary-color), #fbbf24);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.3));
 }
 
 .hero-content h3 {
@@ -235,7 +235,7 @@ ul {
 .btn-primary:hover {
     background-color: var(--primary-hover);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
 }
 
 .btn-secondary {
@@ -373,7 +373,7 @@ ul {
 .skill-tags span:hover {
     border-color: var(--primary-color);
     color: var(--white);
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(245, 158, 11, 0.1);
 }
 
 /* Projects Section */
@@ -394,13 +394,13 @@ ul {
 }
 
 .project-card:hover {
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.2);
-    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.2);
+    border-color: rgba(245, 158, 11, 0.3);
 }
 
 .project-img {
     height: 200px;
-    background: linear-gradient(135deg, #1e293b 0%, #080d1a 100%);
+    background: linear-gradient(135deg, #262626 0%, #0a0a0a 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -420,7 +420,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(23, 23, 23, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -475,7 +475,7 @@ ul {
 }
 
 .project-tags span {
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(245, 158, 11, 0.1);
     color: var(--accent);
     padding: 0.4rem 1rem;
     border-radius: 50px;
@@ -591,7 +591,7 @@ input:focus,
 textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
 }
 
 #form-status {
@@ -602,7 +602,7 @@ textarea:focus {
 /* Footer */
 .footer {
     padding: 60px 0;
-    background-color: #080d1a;
+    background-color: #0a0a0a;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -737,7 +737,7 @@ textarea:focus {
 .cert-icon {
     width: 90px;
     height: 90px;
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(245, 158, 11, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -745,16 +745,16 @@ textarea:focus {
     font-size: 2.8rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.2);
     transition: var(--transition);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.1);
 }
 
 .cert-card:hover .cert-icon {
     background: var(--primary-color);
     color: var(--white);
     transform: rotateY(360deg) scale(1.1);
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
 }
 
 .cert-info h3 {
@@ -826,7 +826,7 @@ textarea:focus {
         right: -100%;
         width: 80%;
         height: 100vh;
-        background: rgba(15, 23, 42, 0.98);
+        background: rgba(23, 23, 23, 0.98);
         backdrop-filter: blur(20px);
         display: flex;
         flex-direction: column;
@@ -835,7 +835,7 @@ textarea:focus {
         gap: 2rem;
         transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1000;
-        border-left: 1px solid rgba(59, 130, 246, 0.1);
+        border-left: 1px solid rgba(245, 158, 11, 0.1);
     }
 
     .nav-links.active {
